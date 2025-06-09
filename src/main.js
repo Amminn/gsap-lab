@@ -7,6 +7,3 @@ addEventListener("DOMContentLoaded", () => {
 
   GSDevTools.create();
 });
-
-// autoAlpha
-// using fromTo
