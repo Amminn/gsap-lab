@@ -30,8 +30,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex;
+  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
   border: 1px solid blue;
@@ -126,4 +126,9 @@ p {
 
 .button:active {
   border-color: rgb(202, 202, 202);
+}
+
+#pin-container-2 {
+  border: 1px solid white;
+  height: 400px;
 }
