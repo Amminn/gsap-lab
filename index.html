@@ -9,22 +9,24 @@
   </head>
   <body>
     <main id="app">
-      <section class="section">
-        <h1 class="text-2xl font-bold text-red-500 mb-8 text-center py-2 border border-white border-solid">GSAP Starter Template</h1>
-        <h1 id="heading">GSAP Starter Template</h1>
-        <p>This pen loads all the GSAP files<br /> Fork and enjoy!</p>
+      <h1 class="text-5xl font-bold text-red-500 mb-8 text-center py-3 border border-white border-solid">GSAP Starter Template</h1>
+      <section class="section min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-white">
+        <h2 id="heading" class="text-4xl font-bold">GSAP Starter Template</h2>
+        <p class="text-center text-">This pen loads all the GSAP files<br /> Fork and enjoy!</p>
         <div class="buttons">
-          <button class="button main">Main</button>
-          <button class="button secondary">Secondary</button>
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
+          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Secondary</button>
         </div>
       </section>
-      <section id="container" class="section the-container">
-        <img class="card-img" src="/card-img-1.jpg" alt="">
-        <div class="boxbox"></div>
-        <h2>random text to test with</h2>
+      <section id="container" class="section the-container p-2 border-1 border-solid border-blue-500 my-2">
+        <img class="card-img mb-2" src="/card-img-1.jpg" alt="">
+        <div id="box" class="box w-[200px] h-[200px] bg-amber-700" ></div>
       </section>
-      <section class="section full-height">
-        <!-- <img class="card-img" src="/card-img-1.jpg" alt=""> -->
+      <section class="section min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
+        <h2 class="text-3xl font-bold text-center uppercase">random testing text</h2>
+      </section>
+      <section class="section min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
+        <h2 class="text-3xl font-bold text-center uppercase">random testing text</h2>
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
