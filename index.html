@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
-    <main id="app">
-      <h1 class="text-5xl font-bold text-red-500 mb-8 text-center py-3 border border-white border-solid">GSAP Starter Template</h1>
-      <section class="section min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-white">
+  <body class="overflow-x-hidden" id="root">
+    <main class="flex flex-col items-center justify-center gap-4 min-h-[100vh]">
+      <h1 class="text-3xl font-bold uppercase">Hello Vite!</h1>
+    </main>
+    <main id="app" class="min-w-fit flex overflow-x-hidden h-[80vh] w-fit">
+      <h1 class="w-screen text-5xl font-bold text-orange-500 mb-8 text-center py-10 border border-orange border-solid">GSAP Starter Template</h1>
+      <section class="slide w-screen section h-[80vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-white ">
         <h2 id="heading" class="text-4xl font-bold">GSAP Starter Template</h2>
         <p class="text-center text-">This pen loads all the GSAP files<br /> Fork and enjoy!</p>
         <div class="buttons">
@@ -18,15 +21,30 @@
           <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Secondary</button>
         </div>
       </section>
-      <section id="container" class="section the-container p-2 border-1 border-solid border-blue-500 my-2">
+      <section id="yellow-container" class="slide h-[80vh] w-screen ">
+        <div id="yellow-box" class="size-20 bg-yellow-400">a</div>
+        <div id="red-box" class="size-20 bg-red-400 ml-auto mt-[-20px]">a</div>
+      </section>
+      <section class="slide w-screen h-[80vh] section the-container p-2 border-1 border-solid border-blue-500 my-2 ">
         <img class="card-img mb-2" src="/card-img-1.jpg" alt="">
         <div id="box" class="box w-[200px] h-[200px] bg-amber-700" ></div>
       </section>
-      <section class="section min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
-        <h2 class="text-3xl font-bold text-center uppercase">random testing text</h2>
+      <section class="slide w-screen section h-[80vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500 ">
+        <h2 class="text-3xl font-bold text-center uppercase">random testing text 1</h2>
       </section>
-      <section class="section min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
-        <h2 class="text-3xl font-bold text-center uppercase">random testing text</h2>
+      <section class="slide w-screen section h-[80vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500 ">
+        <h2 class="text-3xl font-bold text-center uppercase">random testing text 2</h2>
+      </section>
+    </main>
+    <main class="flex flex-col gap-4">
+      <section class="min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
+        <h2 class="text-3xl font-bold text-center uppercase">test test test 1</h2>
+      </section>
+      <section class="min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
+        <h2 class="text-3xl font-bold text-center uppercase">test test test 2</h2>
+      </section>
+      <section class="min-h-[100vh] flex items-center justify-center flex-col gap-4 border-1 border-solid border-yellow-500">
+        <h2 class="text-3xl font-bold text-center uppercase">test test test 3</h2>
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
