@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import vite from "/vite.svg";
+
+import "./App.css";
+
+gsap.registerPlugin(useGSAP);
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [valueX, setValueX] = useState(0);
+  const container = useRef(null);
+  const element = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.to(".logo", {
+        x: valueX,
+      });
+    },
+    {
+      scope: container,
+      dependencies: [valueX],
+      revertOnUpdate: true, // this will force the animation to start from the beginning point every time
+    }
+  );
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <button onClick={() => setValueX(gsap.utils.random(-200, 200))}>
+        Click me
+      </button>
+      <div ref={container}>
+        <img src={vite} className="logo" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <img src={vite} ref={element} className="logo" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
