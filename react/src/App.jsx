@@ -8,33 +8,31 @@ import "./App.css";
 gsap.registerPlugin(useGSAP);
 
 function App() {
-  const [valueX, setValueX] = useState(0);
-  const container = useRef(null);
   const element = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.to(".logo", {
-        x: valueX,
-      });
-    },
-    {
-      scope: container,
-      dependencies: [valueX],
-      revertOnUpdate: true, // this will force the animation to start from the beginning point every time
-    }
-  );
+  useGSAP((context, contextSafe) => {
+    gsap.to(".logo-1", { rotate: 360 });
+
+    const animate = contextSafe(() => {
+      gsap.to(".logo-2", { rotate: 360 });
+      console.log(context.data.length);
+    });
+
+    element.current.addEventListener("click", animate);
+    console.log(context.data.length);
+
+    return () => {
+      element.current.removeEventListener("click", animate);
+    };
+  });
 
   return (
     <>
-      <button onClick={() => setValueX(gsap.utils.random(-200, 200))}>
-        Click me
-      </button>
-      <div ref={container}>
-        <img src={vite} className="logo" />
+      <div>
+        <img src={vite} className="logo logo-1" />
       </div>
 
-      <img src={vite} ref={element} className="logo" />
+      <img src={vite} ref={element} className="logo logo-2" />
     </>
   );
 }
