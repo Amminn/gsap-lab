@@ -21,11 +21,15 @@ body {
   padding: 0;
 
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   background: black;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.2) 0.04em, transparent 0.04em),
     linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0.04em, transparent 0.04em);
   background-size: 4em 4em;
+}
+
+.smoother-content {
+
 }
