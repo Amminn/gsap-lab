@@ -1,24 +1,56 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { gsap } from "gsap";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+import { GSDevTools } from "gsap/GSDevTools";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 
-setupCounter(document.querySelector('#counter'))
+gsap.registerPlugin(SplitText);
+
+addEventListener("DOMContentLoaded", () => {
+  let splitFirstTitle = SplitText.create(".first-title", {
+    type: "chars",
+  });
+
+  let splitSecondTitle = SplitText.create(".second-title", {
+    type: "chars",
+  });
+
+  gsap.fromTo(
+    splitFirstTitle.chars,
+    {
+      y: -100,
+    },
+    {
+      y: 100,
+      duration: 1,
+      stagger: {
+        repeat: -1,
+        each: 0.05,
+        from: "start",
+        yoyo: true,
+      },
+      repeatRefresh: true,
+      ease: "power2.inOut",
+      repeat: -1,
+    }
+  );
+  gsap.fromTo(
+    splitSecondTitle.chars,
+    {
+      y: -100,
+    },
+    {
+      y: 100,
+      duration: 1,
+      stagger: {
+        each: 0.05,
+        from: "start",
+        repeat: -1,
+        yoyo: true,
+      },
+      repeatRefresh: true,
+      ease: "power2.inOut",
+      repeat: -1,
+    }
+  );
+});
