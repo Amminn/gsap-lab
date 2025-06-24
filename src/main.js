@@ -24,12 +24,13 @@ addEventListener("DOMContentLoaded", () => {
       y: 100,
       duration: 1,
       stagger: {
+        repeat: -1,
         each: 0.05,
-        from: "end",
+        from: "start",
+        yoyo: true,
       },
       repeatRefresh: true,
       ease: "power2.inOut",
-      yoyo: true,
       repeat: -1,
     }
   );
@@ -43,11 +44,12 @@ addEventListener("DOMContentLoaded", () => {
       duration: 1,
       stagger: {
         each: 0.05,
-        from: "end",
+        from: "start",
+        repeat: -1,
+        yoyo: true,
       },
       repeatRefresh: true,
       ease: "power2.inOut",
-      yoyo: true,
       repeat: -1,
     }
   );
