@@ -1,12 +1,15 @@
 import { gsap } from "gsap";
+import navHtml from "./components/nav.html?raw";
 
 import { GSDevTools } from "gsap/GSDevTools";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
-
+console.log("hello");
 addEventListener("DOMContentLoaded", () => {
+  document.getElementById("navbar-placeholder").innerHTML = navHtml;
+
   let splitFirstTitle = SplitText.create(".first-title", {
     type: "chars",
   });

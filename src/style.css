@@ -20,3 +20,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
