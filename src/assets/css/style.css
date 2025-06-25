@@ -13,4 +13,32 @@
   margin-inline: auto;
 }
 
+button {
+  padding: 1rem 2rem;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.cloud-wrapper {
+  position: relative;
+}
+.cloud-wrapper img {
+  width: 300px;
+  height: 230px;
+}
+.cloud-wrapper .cloud-png {
+  position: absolute;
+  top: 120px;
+  left: 400px;
+  width: 220px;
+  height: 190px;
+}
+.cloud-wrapper .cloud-png-1 {
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  top: 220px;
+  left: -300px;
+}
+
 /*# sourceMappingURL=style.css.map */

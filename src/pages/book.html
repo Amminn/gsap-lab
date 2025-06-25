@@ -7,24 +7,71 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>Document</title>
   </head>
-  <body class="relative w-full overflow-x-hidden">
+  <body class="bg-black relative w-full overflow-x-hidden">
     <div class="container border-1 mx-auto">
       <h1>this is a test to see how things can work</h1>
     </div>
 
     <section
       id="heroSection"
-      class="relative overflow-hidden grid place-content-center h-screen z-1"
+      class="relative overflow-hidden grid place-content-center h-screen z-1 bg-black"
     >
-      <img class="small-img size-30" src="/card-img-1.jpg" />
-      <img class="small-img size-30" src="/card-img-2.jpg" />
-      <img class="small-img size-30" src="/card-img-3.jpg" />
-      <img class="small-img size-30" src="/card-img-4.jpg" />
+      <img class="absolute small-img size-30" src="/card-img-1.jpg" />
+      <img class="absolute small-img size-30" src="/card-img-2.jpg" />
+      <img class="absolute small-img size-30" src="/card-img-3.jpg" />
+      <img class="absolute small-img size-30" src="/card-img-4.jpg" />
+
+      <h1 class="text-2xl text-center font-black">GSAP TESTING</h1>
+      <p class="text-sm text-center mt-2">This is cool you know that</p>
+      <div class="flex gap-2 mt-2">
+        <button>Buy Now!</button>
+        <button>Contact</button>
+      </div>
+      <div class="cloud-wrapper">
+        <img
+          class="cloud-png absolute left-10"
+          src="/cloud/cloud.png"
+          alt="cloud"
+        />
+        <img
+          class="cloud-png-1 absolute left-10"
+          src="/cloud/cloud.png"
+          alt="cloud"
+        />
+        <img
+          class="cloud-png-2 absolute left-10"
+          src="/cloud/cloud.png"
+          alt="cloud"
+        />
+      </div>
     </section>
 
-    <section class="relative w-full overflow-hidden"></section>
+    <section class="border-1 relative h-screen w-full overflow-hidden">
+      <div id="horizontalSection" class="relative w-full min-h-screen">
+        <div
+          class="slide slider-1 relative slide w-screen h-screen flex justify-center items-center"
+        >
+          <h2 class="text-3xl text-center text-white">Big Title Example 1</h2>
+        </div>
+        <div
+          class="slide slider-2 relative slide w-screen h-screen flex justify-center items-center"
+        >
+          <h2 class="text-3xl text-center text-white">Big Title Example 2</h2>
+        </div>
+        <div
+          class="slide slider-3 relative slide w-screen h-screen flex justify-center items-center"
+        >
+          <h2 class="text-3xl text-center text-white">Big Title Example 3</h2>
+        </div>
+        <div
+          class="slide slider-4 relative slide w-screen h-screen flex justify-center items-center"
+        >
+          <h2 class="text-3xl text-center text-white">Big Title Example 4</h2>
+        </div>
+      </div>
+    </section>
 
-    <section class="relative"></section>
+    <section class="border-1 border-orange-400 relative h-screen"></section>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

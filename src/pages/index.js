@@ -11,8 +11,8 @@ addEventListener("DOMContentLoaded", () => {
   }
 
   gsap.set(smallImgs, {
-    y: "random(-200, 300)",
-    x: "random(0, 500)",
+    y: "random(-200, 200)",
+    x: "random(-100, 300)",
     scale: "random(.1, .4)",
   });
 
@@ -25,7 +25,7 @@ addEventListener("DOMContentLoaded", () => {
     },
     {
       x: `random(0, ${windowWidth})`,
-      duration: 30,
+      duration: 10,
       ease: "none",
       stagger: {
         yoyo: true,
@@ -34,4 +34,50 @@ addEventListener("DOMContentLoaded", () => {
       },
     }
   );
+
+  const introTL = gsap.timeline({
+    default: { ease: "power1.inOut", duration: 2 },
+  });
+
+  // Make sure #heroSection is visible and has overflow hidden for clipPath to work
+  const heroSection = document.querySelector("#heroSection");
+
+  introTL
+    .from("#heroSection", {
+      clipPath: "inset(20% 20% 20% 20%)",
+      delay: 1,
+    })
+    .from(
+      "#heroSection :is(h1,p,button)",
+      {
+        clipPath: "inset(100% 0 0 0)",
+        stagger: 0.1,
+        y: 50,
+      },
+      "<20%"
+    );
+
+  const heroTL = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#heroSection",
+        start: "top center",
+        markers: true,
+        scrub: 1,
+      },
+    })
+    .to(
+      ".cloud-png",
+      {
+        scale: 2,
+      },
+      0
+    )
+    .to(
+      ".cloud-png-1",
+      {
+        scale: 2,
+      },
+      0
+    );
 });
