@@ -1,0 +1,16 @@
+.testing .nav {
+  border: 1px solid black;
+  min-height: 20px;
+  height: 100%;
+  width: 1000px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-block: 1rem;
+  font-size: 2rem;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

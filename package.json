@@ -8,17 +8,20 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "sass:compile": "sass src/scss/style.scss src/assets/css/style.css",
+    "sass:watch": "sass --watch src/scss/style.scss:src/assets/css/style.css"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.10",
     "autoprefixer": "^10.4.21",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
+    "sass": "^1.89.2",
     "tailwindcss": "^4.1.10",
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.10",
     "gsap": "^3.13.0"
   }
 }
