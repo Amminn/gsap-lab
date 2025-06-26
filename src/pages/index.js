@@ -17,7 +17,7 @@ addEventListener("DOMContentLoaded", () => {
   });
 
   const windowWidth = window.innerWidth;
-  console.log(windowWidth);
+  // console.log(windowWidth);
   gsap.fromTo(
     smallImgs,
     {
@@ -62,7 +62,7 @@ addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#heroSection",
         start: "top center",
-        markers: true,
+        // markers: true,
         scrub: 1,
       },
     })
@@ -80,4 +80,58 @@ addEventListener("DOMContentLoaded", () => {
       },
       0
     );
+
+  // horizontal scroll
+  // const slides = gsap.utils.toArray(".slide");
+
+  // const HS = gsap.to(slides, {
+  //   xPercent: -100 * (slides.length - 1),
+  //   scrollTrigger: {
+  //     trigger: "#horizontalSection",
+  //     pin: true,
+  //     start: "top top",
+  //     end: "+=5000px",
+  //     scrub: 1,
+
+  //   },
+  // });
+
+  let sections = gsap.utils.toArray(".panel");
+  let container = document.querySelector(".horizontal-container");
+
+  console.log(container.scrollWidth);
+  console.log(window.innerWidth);
+
+  const panels = gsap.utils.toArray(".panel");
+
+  const HS = gsap.to(sections, {
+    x: () => -(container.scrollWidth - window.innerWidth) + "px",
+    // x: -100 * (slides.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".horizontal-container",
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      end: () => "+=" + (container.scrollWidth - window.innerWidth),
+      anticipatePin: 1,
+    },
+  });
+
+  panels.forEach((e, i) => {
+    const element = e.querySelectorAll("h2, p");
+
+    if (i !== 0) {
+      gsap.from(element, {
+        y: 100,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: e,
+          start: "top center",
+          containerAnimation: HS,
+          markers: true,
+        },
+      });
+    }
+  });
 });

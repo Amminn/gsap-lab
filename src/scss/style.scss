@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .testing {
   .nav {
     border: 1px solid black;
@@ -41,5 +45,43 @@ button {
     height: 200px;
     top: 220px;
     left: -300px;
+  }
+}
+
+// #horizontalSection {
+//   display: flex;
+//   width: 400vw; /* For 4 slides */
+// }
+// .slide {
+//   width: 100vw;
+//   flex-shrink: 0;
+// }
+
+.horizontal-container {
+  width: 400%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .panel {
+    width: 100%;
+    // font-size: 4rem;
+    // font-weight: bold;
+  }
+
+  .blue {
+    border: 1px solid blue;
+  }
+
+  .red {
+    border: 1px solid red;
+  }
+
+  .orange {
+    border: 1px solid orange;
+  }
+
+  .purple {
+    border: 1px solid purple;
   }
 }
