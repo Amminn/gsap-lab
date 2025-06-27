@@ -64,7 +64,7 @@
         <h2>slider 1</h2>
         <p>random slider one two three text text</p>
       </section>
-      <section class="panel purple">
+      <section class="frame panel purple">
         <h2>slider 1</h2>
         <p>random slider one two three text text</p>
       </section>
@@ -100,7 +100,37 @@
       </div>
     </section> -->
 
-    <section class="border-1 border-orange-400 relative h-screen"></section>
+    <section class="relative">
+      <div
+        id="framesSection"
+        class="relative h-screen text-while text-center uppercase text-4xl font-black"
+      >
+        <div
+          class="frame absolute inset-0 size-full flex justify-center items-center"
+        >
+          <h2 class="absolute">GSAP 1</h2>
+          <img src="/card-img-1.jpg" class="size-full object-cover" alt="" />
+        </div>
+        <div
+          class="frame absolute inset-0 size-full flex justify-center items-center"
+        >
+          <h2 class="absolute">GSAP 2</h2>
+          <img src="/card-img-2.jpg" class="size-full object-cover" alt="" />
+        </div>
+        <div
+          class="frame absolute inset-0 size-full flex justify-center items-center"
+        >
+          <h2 class="absolute">GSAP 3</h2>
+          <img src="/card-img-3.jpg" class="size-full object-cover" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="h-screen w-full flex items-center justify-center">
+      <h1 class="text-5xl font-black uppercase text-white">last section</h1>
+    </section>
+
+    <!-- <section class="border-1 border-orange-400 relative h-screen"></section> -->
     <script type="module" src="./index.js"></script>
   </body>
 </html>

@@ -125,13 +125,61 @@ addEventListener("DOMContentLoaded", () => {
       gsap.from(element, {
         y: 100,
         opacity: 0,
+        stagger: 0.1,
         scrollTrigger: {
           trigger: e,
           start: "top center",
           containerAnimation: HS,
           markers: true,
+          toggleActions: "play reverse play reverse", // you can add to retrigger the animation when back
         },
       });
     }
   });
+
+  // frames
+
+  const frames = gsap.utils.toArray(".frame");
+
+  // Set zIndex so the top frame is visible first
+  gsap.set(frames, { zIndex: (i) => -i + 1 });
+
+  // 1. Base scroll per frame
+  const baseScroll = 600;
+
+  // 2. Define multipliers per frame
+  const scrollMultipliers = [0.2, 1, 1]; // First frame scrolls faster (0.2 * 500 = 100px)
+
+  // 3. Compute pixel durations per frame
+  const scrollDurations = scrollMultipliers.map(
+    (multiplier) => multiplier * baseScroll
+  );
+
+  // 4. Compute total scroll distance dynamically
+  const totalScroll = scrollDurations.reduce((sum, px) => sum + px, 0);
+
+  // 5. Build timeline with ScrollTrigger
+  const framesTL = gsap.timeline({
+    defaults: { ease: "none" },
+    scrollTrigger: {
+      trigger: "#framesSection",
+      start: "top top",
+      end: `+=${totalScroll}px`, // 🔥 still dynamic
+      pin: true,
+      scrub: 1,
+      markers: true,
+    },
+  });
+
+  // 6. Add animations with individual durations
+  frames.forEach((frame, i) => {
+    if (i !== frames.length - 1) {
+      framesTL.to(frame, {
+        clipPath: "inset(0 0 100% 0)",
+        duration: scrollDurations[i], // 🔥 dynamic duration
+      });
+    }
+  });
 });
+
+//       end: `+=${frames.length * 500}px`,
