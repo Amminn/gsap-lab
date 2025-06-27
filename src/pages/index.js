@@ -3,6 +3,34 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const urls = [
+  "/frame-images/1.png",
+  "/frame-images/2.png",
+  "/frame-images/3.png",
+  "/frame-images/4.png",
+  "/frame-images/5.png",
+  "/frame-images/6.png",
+  "/frame-images/7.png",
+  "/frame-images/8.png",
+  "/frame-images/9.png",
+  "/frame-images/10.png",
+  "/frame-images/11.png",
+  "/frame-images/12.png",
+  "/frame-images/13.png",
+  "/frame-images/14.png",
+  "/frame-images/15.png",
+  "/frame-images/16.png",
+  "/frame-images/17.png",
+  "/frame-images/18.png",
+  "/frame-images/19.png",
+  "/frame-images/20.png",
+  "/frame-images/21.png",
+  "/frame-images/22.png",
+  "/frame-images/23.png",
+  "/frame-images/24.png",
+  "/frame-images/25.png",
+];
+
 addEventListener("DOMContentLoaded", () => {
   const smallImgs = document.querySelectorAll(".small-img");
   if (smallImgs.length === 0) {
@@ -180,6 +208,78 @@ addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  imageSequence({
+    urls, // Array of image URLs
+    canvas: "#image-sequence", // <canvas> selector
+    scrollTrigger: {
+      trigger: "#image-sequence",
+      start: "top top",
+      // end: "max",
+      scrub: true,
+      pin: true,
+      markers: true,
+    },
+  });
+
+  function imageSequence(config) {
+    let playhead = { frame: 0 },
+      canvas = document.querySelector(config.canvas),
+      ctx = canvas.getContext("2d"),
+      onUpdate = config.onUpdate,
+      images = [],
+      loaded = 0;
+
+    // Preload all images
+    config.urls.forEach((url, i) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => {
+        loaded++;
+        // Set canvas size to first image loaded
+        if (i === 0) {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          updateImage();
+        }
+        // When all images loaded, draw current frame
+        if (loaded === config.urls.length) updateImage();
+      };
+      images[i] = img;
+    });
+
+    function updateImage() {
+      const frame = Math.round(playhead.frame);
+      if (images[frame] && images[frame].complete) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(images[frame], 0, 0, canvas.width, canvas.height);
+        onUpdate && onUpdate.call(this);
+      }
+    }
+
+    return gsap.to(playhead, {
+      frame: images.length - 1,
+      ease: "none",
+      onUpdate: updateImage,
+      scrollTrigger: config.scrollTrigger,
+    });
+  }
 });
 
 //       end: `+=${frames.length * 500}px`,
+
+/*
+Helper function that handles scrubbing through a sequence of images, drawing the appropriate one to the provided canvas.
+Config object properties:
+  - urls [Array]: an Array of image URLs
+  - canvas [Canvas]: the <canvas> object to draw to
+  - scrollTrigger [Object]: an optional ScrollTrigger configuration object like {trigger: "#trigger", start: "top top", end: "+=1000", scrub: true, pin: true}
+  - onUpdate [Function]: optional callback for when the Tween updates (probably not used very often)
+
+ Returns a Tween instance
+*/
+
+const render = document.querySelector("#render");
+const img = document.createElement("img");
+img.src = "/frame-images/1.png";
+render.append(img);
