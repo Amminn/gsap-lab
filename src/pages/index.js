@@ -1,7 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 const urls = [
   "/frame-images/1.png",
@@ -264,6 +266,36 @@ addEventListener("DOMContentLoaded", () => {
       scrollTrigger: config.scrollTrigger,
     });
   }
+
+  // Make sure your HTML has:
+  // <div id="smooth-wrapper"><div id="smooth-content">...all your page content...</div></div>
+  // Then uncomment below to enable ScrollSmoother:
+
+  const smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1,
+    effects: true, // <-- THIS IS THE MAGIC!
+    smoothTouch: 0.1,
+    ignoreMobileResize: true,
+  });
+
+  const split = SplitText.create("#splitter-text", {
+    type: "chars",
+  });
+
+  gsap.from(split.chars, {
+    opacity: 0.2,
+    stagger: 0.05,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#yes-no",
+      start: "top 30%",
+      end: "top top",
+      scrub: true,
+      markers: true,
+    },
+  });
 });
 
 //       end: `+=${frames.length * 500}px`,

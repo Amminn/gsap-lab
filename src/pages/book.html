@@ -8,69 +8,71 @@
     <title>Document</title>
   </head>
   <body class="bg-black relative w-full overflow-x-hidden">
-    <div class="container border-1 mx-auto">
-      <h1>this is a test to see how things can work</h1>
-    </div>
-
-    <section
-      id="heroSection"
-      class="relative overflow-hidden grid place-content-center h-screen z-1 bg-black"
-    >
-      <img class="absolute small-img size-30" src="/card-img-1.jpg" />
-      <img class="absolute small-img size-30" src="/card-img-2.jpg" />
-      <img class="absolute small-img size-30" src="/card-img-3.jpg" />
-      <img class="absolute small-img size-30" src="/card-img-4.jpg" />
-
-      <h1 class="text-2xl text-center font-black">GSAP TESTING</h1>
-      <p class="text-sm text-center mt-2">This is cool you know that</p>
-      <div class="flex gap-2 mt-2">
-        <button>Buy Now!</button>
-        <button>Contact</button>
-      </div>
-      <div class="cloud-wrapper">
-        <img
-          class="cloud-png absolute left-10"
-          src="/cloud/cloud.png"
-          alt="cloud"
-        />
-        <img
-          class="cloud-png-1 absolute left-10"
-          src="/cloud/cloud.png"
-          alt="cloud"
-        />
-        <img
-          class="cloud-png-2 absolute left-10"
-          src="/cloud/cloud.png"
-          alt="cloud"
-        />
-      </div>
-    </section>
-
-    <div class="horizontal-container">
-      <div class="description panel blue">
-        <div>
-          <h2>slider 1</h2>
-          <p>random slider one two three text text</p>
-          SCROLL DOWN
-          <div class="scroll-down"><div class="arrow"></div></div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <div class="container border-1 mx-auto">
+          <h1>this is a test to see how things can work</h1>
         </div>
-      </div>
 
-      <section class="panel red">
-        <h2>slider 1</h2>
-        <p>random slider one two three text text</p>
-      </section>
-      <section class="panel orange">
-        <h2>slider 1</h2>
-        <p>random slider one two three text text</p>
-      </section>
-      <section class="frame panel purple">
-        <h2>slider 1</h2>
-        <p>random slider one two three text text</p>
-      </section>
-    </div>
+        <section
+          id="heroSection"
+          class="relative overflow-hidden grid place-content-center h-screen z-1 bg-black"
+        >
+          <img class="absolute small-img size-30" src="/card-img-1.jpg" />
+          <img class="absolute small-img size-30" src="/card-img-2.jpg" />
+          <img class="absolute small-img size-30" src="/card-img-3.jpg" />
+          <img class="absolute small-img size-30" src="/card-img-4.jpg" />
 
-    <!-- <section class="relative w-full overflow-hidden">
+          <h1 class="text-2xl text-center font-black">GSAP TESTING</h1>
+          <p class="text-sm text-center mt-2">This is cool you know that</p>
+          <div class="flex gap-2 mt-2">
+            <button>Buy Now!</button>
+            <button>Contact</button>
+          </div>
+          <div class="cloud-wrapper">
+            <img
+              class="cloud-png absolute left-10"
+              src="/cloud/cloud.png"
+              alt="cloud"
+            />
+            <img
+              class="cloud-png-1 absolute left-10"
+              src="/cloud/cloud.png"
+              alt="cloud"
+            />
+            <img
+              class="cloud-png-2 absolute left-10"
+              src="/cloud/cloud.png"
+              alt="cloud"
+            />
+          </div>
+        </section>
+
+        <div class="horizontal-container">
+          <div class="description panel blue">
+            <div>
+              <h2>slider 1</h2>
+              <p>random slider one two three text text</p>
+              SCROLL DOWN
+              <div class="scroll-down"><div class="arrow"></div></div>
+            </div>
+          </div>
+
+          <section class="panel red">
+            <h2>slider 1</h2>
+            <p>random slider one two three text text</p>
+          </section>
+          <section class="panel orange">
+            <h2>slider 1</h2>
+            <p>random slider one two three text text</p>
+          </section>
+          <section class="frame panel purple">
+            <h2>slider 1</h2>
+            <p>random slider one two three text text</p>
+          </section>
+        </div>
+
+        <!-- <section class="relative w-full overflow-hidden">
       <div id="horizontalSection" class="relative w-full min-w-fit flex nowrap">
         <div
           class="border-1 relative slide w-screen h-screen flex justify-center items-center"
@@ -100,58 +102,97 @@
       </div>
     </section> -->
 
-    <section class="relative">
-      <div
-        id="framesSection"
-        class="relative h-screen text-while text-center uppercase text-4xl font-black"
-      >
-        <div
-          class="frame absolute inset-0 size-full flex justify-center items-center"
-        >
-          <h2 class="absolute">GSAP 1</h2>
-          <img src="/card-img-1.jpg" class="size-full object-cover" alt="" />
-        </div>
-        <div
-          class="frame absolute inset-0 size-full flex justify-center items-center"
-        >
-          <h2 class="absolute">GSAP 2</h2>
-          <img src="/card-img-2.jpg" class="size-full object-cover" alt="" />
-        </div>
-        <div
-          class="frame absolute inset-0 size-full flex justify-center items-center"
-        >
-          <h2 class="absolute">GSAP 3</h2>
-          <img src="/card-img-3.jpg" class="size-full object-cover" alt="" />
-        </div>
-      </div>
-    </section>
+        <section class="relative">
+          <div
+            id="framesSection"
+            class="relative h-screen text-while text-center uppercase text-4xl font-black"
+          >
+            <div
+              class="frame absolute inset-0 size-full flex justify-center items-center"
+            >
+              <h2 class="absolute">GSAP 1</h2>
+              <img
+                src="/card-img-1.jpg"
+                class="size-full object-cover"
+                alt=""
+              />
+            </div>
+            <div
+              class="frame absolute inset-0 size-full flex justify-center items-center"
+            >
+              <h2 class="absolute">GSAP 2</h2>
+              <img
+                src="/card-img-2.jpg"
+                class="size-full object-cover"
+                alt=""
+              />
+            </div>
+            <div
+              class="frame absolute inset-0 size-full flex justify-center items-center"
+            >
+              <h2 class="absolute">GSAP 3</h2>
+              <img
+                src="/card-img-3.jpg"
+                class="size-full object-cover"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
 
-    <section
-      class="h-screen w-full bg-black flex justify-center items-center border-1"
-    >
-      <h2 class="uppercase text-6xl text-center">splitter</h2>
-    </section>
+        <section
+          class="h-screen w-full bg-black flex justify-center items-center border-1"
+        >
+          <h2 class="uppercase text-6xl text-center">splitter</h2>
+        </section>
+        <section class="h-screen w-full bg-black">
+          <canvas id="image-sequence" class="h-full w-full"></canvas>
+        </section>
+
+        <section
+          class="h-screen w-full bg-black flex justify-center items-center border-1"
+        >
+          <h2 class="uppercase text-6xl text-center">splitter</h2>
+        </section>
+
+        <!--
     <section class="h-screen w-full bg-black">
-      <canvas id="image-sequence" class="h-full w-full"></canvas>
-    </section>
-
-    <section
-      class="h-screen w-full bg-black flex justify-center items-center border-1"
-    >
-      <h2 class="uppercase text-6xl text-center">splitter</h2>
-    </section>
-
-    <!-- <section class="h-screen w-full bg-black">
       <canvas id="image-sequence-1" class="h-full w-full"></canvas>
-    </section> -->
-
-    <section
-      class="h-screen w-full bg-black flex justify-center items-center border-1"
-    >
-      <h2 class="uppercase text-6xl text-center">splitter</h2>
     </section>
+    -->
 
-    <!-- <section class="border-1 border-orange-400 relative h-screen"></section> -->
+        <section
+          class="cool-section h-screen w-full bg-black flex items-center border-1 border-orange-500"
+          id="yes-no"
+        >
+          <div class="container">
+            <div
+              class="left w-100 min-w-[320px] h-[225px] overflow-hidden relative"
+            >
+              <img
+                class="h-[125%] absolute object-cover"
+                src="/card-img-4.jpg"
+                alt="random no sense image"
+                data-speed="auto"
+              />
+            </div>
+            <div id="splitter-text-wrapper">
+              <h2 class="uppercase text-4xl mb-1">splitter</h2>
+              <p id="splitter-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+                iure provident. Nulla blanditiis ullam corporis magni
+                reprehenderit corrupti labore. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Et, iure provident. Nulla
+                blanditiis ullam corporis magni reprehenderit corrupti labore.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section class="border-1 border-orange-400 relative h-screen">
+      <h1>text text</h1>
+    </section>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
