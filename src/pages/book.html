@@ -10,9 +10,141 @@
   <body class="bg-black relative w-full overflow-x-hidden">
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <div class="container border-1 mx-auto">
-          <h1>this is a test to see how things can work</h1>
-        </div>
+        <nav>
+          <div class="container flex border-1 py-1">
+            <div class="logo">
+              <a href="/">
+                <span class="text-3xl font-black">GSAP</span>
+              </a>
+            </div>
+            <div class="nav-list-wrapper">
+              <ul class="nav-list">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/book">Book</a>
+                </li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact</a>
+                </li>
+              </ul>
+              <div id="button" class="toggle">
+                <svg
+                  id="toggle-button-svg"
+                  width="65"
+                  height="45"
+                  viewBox="0 0 45 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="toggle-button">
+                    <rect
+                      id="toggle-bg"
+                      y="0.0429688"
+                      width="41.7714"
+                      height="17.2"
+                      rx="8.6"
+                      fill="#F5F5F5"
+                    />
+                    <g id="character">
+                      <g id="body" filter="url(#filter0_d_103_32)">
+                        <circle
+                          cx="33.1714"
+                          cy="8.64303"
+                          r="7.37143"
+                          fill="#E49494"
+                        />
+                      </g>
+                      <circle
+                        id="right-eye"
+                        cx="36.2429"
+                        cy="5.57156"
+                        r="0.614286"
+                        fill="#020202"
+                      />
+                      <circle
+                        id="left-eye"
+                        cx="30.1"
+                        cy="5.57156"
+                        r="0.614286"
+                        fill="#020202"
+                      />
+                      <ellipse
+                        id="mouth"
+                        cx="33.1714"
+                        cy="9.25723"
+                        rx="1.22857"
+                        ry="0.614286"
+                        fill="#020202"
+                      />
+                      <path
+                        id="right-hand"
+                        d="M36.9026 8.46104C36.8723 8.58231 36.842 8.70358 36.8117 8.82485C36.9359 8.89901 37.0605 8.97935 37.1824 9.05966C37.6702 9.38365 38.1377 9.70802 38.614 10.0177C39.4374 10.556 40.1823 11.2113 40.8103 11.9745C41.4552 12.7955 42.2812 13.6168 42.7386 14.4028C42.7842 14.5067 42.799 14.6324 42.8125 14.7858C42.9375 14.7858 43.0625 14.7858 43.1875 14.7858C43.201 14.6393 43.218 14.4604 43.176 14.2753C42.7518 13.1277 42.0886 12.3615 41.5039 11.4543C40.8831 10.5521 40.0783 9.77973 39.1607 9.18038C38.6297 8.83464 38.0291 8.59206 37.3897 8.49662C37.2299 8.47342 37.0665 8.45927 36.9026 8.46104Z"
+                        fill="black"
+                      />
+                      <path
+                        id="left-hand"
+                        d="M29.4402 8.46104C29.4706 8.58231 29.5009 8.70358 29.5312 8.82485C29.407 8.89901 29.2824 8.97935 29.1605 9.05966C28.6726 9.38365 28.2051 9.70802 27.7289 10.0177C26.9054 10.556 26.1605 11.2113 25.5325 11.9745C24.8877 12.7955 24.0617 13.6168 23.6042 14.4028C23.5587 14.5067 23.5438 14.6324 23.5304 14.7858C23.4054 14.7858 23.2804 14.7858 23.1554 14.7858C23.1418 14.6393 23.1249 14.4604 23.1669 14.2753C23.591 13.1277 24.2543 12.3615 24.8389 11.4543C25.4598 10.5521 26.2645 9.77973 27.1822 9.18038C27.7131 8.83464 28.3138 8.59206 28.9531 8.49662C29.1129 8.47342 29.2764 8.45927 29.4402 8.46104Z"
+                        fill="black"
+                      />
+                      <path
+                        id="left-leg"
+                        d="M30.414 13.3933C30.4746 13.5026 30.5353 13.6119 30.596 13.7212C30.4952 13.825 30.3956 13.9348 30.2987 14.0439C29.9113 14.4832 29.5437 14.9175 29.1638 15.3399C28.5078 16.073 27.9578 16.8987 27.5487 17.7984C27.1384 18.7584 26.5531 19.7655 26.3147 20.6431C26.2975 20.7552 26.3157 20.8805 26.3424 21.0322C26.2217 21.0645 26.1009 21.0969 25.9802 21.1292C25.9292 20.9912 25.8665 20.8227 25.8592 20.6331C25.9719 19.4149 26.4142 18.5031 26.7441 17.4755C27.1104 16.4434 27.6878 15.489 28.419 14.6726C28.8424 14.2012 29.3598 13.8114 29.9527 13.5538C30.101 13.49 30.2552 13.434 30.414 13.3933Z"
+                        fill="black"
+                      />
+                      <path
+                        id="right-leg"
+                        d="M36.0809 13.3933C36.0202 13.5026 35.9596 13.6119 35.8989 13.7212C35.9997 13.825 36.0992 13.9348 36.1962 14.0439C36.5836 14.4832 36.9512 14.9175 37.331 15.3399C37.9871 16.073 38.5371 16.8987 38.9461 17.7984C39.3565 18.7584 39.9418 19.7655 40.1802 20.6431C40.1973 20.7552 40.1791 20.8805 40.1524 21.0322C40.2732 21.0645 40.3939 21.0969 40.5147 21.1292C40.5656 20.9912 40.6283 20.8227 40.6357 20.6331C40.523 19.4149 40.0806 18.5031 39.7507 17.4755C39.3845 16.4434 38.8071 15.489 38.0758 14.6726C37.6525 14.2012 37.1351 13.8114 36.5422 13.5538C36.3939 13.49 36.2397 13.434 36.0809 13.3933Z"
+                        fill="black"
+                      />
+                    </g>
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_103_32"
+                      x="21.8"
+                      y="1.27161"
+                      width="22.7429"
+                      height="22.7428"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_103_32"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_103_32"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </nav>
 
         <section
           id="heroSection"
@@ -146,7 +278,10 @@
           <h2 class="uppercase text-6xl text-center">splitter</h2>
         </section>
         <section class="h-screen w-full bg-black">
-          <canvas id="image-sequence" class="h-full w-full"></canvas>
+          <canvas
+            id="image-sequence"
+            class="h-full w-full max-h-[700px]"
+          ></canvas>
         </section>
 
         <section
@@ -190,9 +325,6 @@
         </section>
       </div>
     </div>
-    <section class="border-1 border-orange-400 relative h-screen">
-      <h1>text text</h1>
-    </section>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

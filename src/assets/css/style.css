@@ -53,13 +53,32 @@ button {
   margin-bottom: 1rem;
 }
 
-.cool-section .container {
+.container {
   max-width: 900px;
   margin-inline: auto;
   padding: 0rem 2rem;
+}
+
+.cool-section .container {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+nav .nav-list-wrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+nav .nav-list-wrapper .nav-list {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+nav .toggle {
+  margin-bottom: -10px;
+  cursor: pointer;
 }
 
 .horizontal-container {

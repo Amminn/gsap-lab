@@ -55,14 +55,36 @@ button {
   margin-bottom: 1rem;
 }
 
+.container {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 0rem 2rem;
+}
+
 .cool-section {
   .container {
-    max-width: 900px;
-    margin-inline: auto;
-    padding: 0rem 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+}
+
+nav {
+  .nav-list-wrapper {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    .nav-list {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  }
+
+  .toggle {
+    margin-bottom: -10px;
+    cursor: pointer;
   }
 }
 // #horizontalSection {

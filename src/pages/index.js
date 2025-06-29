@@ -3,7 +3,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import { CustomEase } from "gsap/CustomEase";
+import { CustomWiggle } from "gsap/CustomWiggle";
+
+gsap.registerPlugin(
+  ScrollTrigger,
+  ScrollSmoother,
+  SplitText,
+  CustomEase,
+  CustomWiggle
+);
 
 const urls = [
   "/frame-images/1.png",
@@ -160,7 +169,7 @@ addEventListener("DOMContentLoaded", () => {
           trigger: e,
           start: "top center",
           containerAnimation: HS,
-          markers: true,
+          // markers: true,
           toggleActions: "play reverse play reverse", // you can add to retrigger the animation when back
         },
       });
@@ -197,7 +206,7 @@ addEventListener("DOMContentLoaded", () => {
       end: `+=${totalScroll}px`, // 🔥 still dynamic
       pin: true,
       scrub: 1,
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -220,7 +229,7 @@ addEventListener("DOMContentLoaded", () => {
       // end: "max",
       scrub: true,
       pin: true,
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -293,8 +302,56 @@ addEventListener("DOMContentLoaded", () => {
       start: "top 30%",
       end: "top top",
       scrub: true,
-      markers: true,
+      // markers: true,
     },
+  });
+
+  // button toggle animation
+  const button = document.getElementById("button");
+  const shape = document.getElementById("character");
+  const bg = document.getElementById("toggle-bg");
+
+  const limbs = gsap.utils.toArray(
+    "#right-hand, #left-hand, #left-leg, #right-leg"
+  );
+
+  const limbsLeft = gsap.utils.toArray("#left-hand, #left-leg");
+  const eyes = gsap.utils.toArray("#left-eye, #right-eye");
+
+  let played = true;
+
+  const animate = () => {
+    gsap.to(shape, {
+      x: played ? 0 : -24,
+      duration: 2,
+      ease: "elastic",
+      overwrite: true,
+    });
+
+    gsap.set(limbsLeft, {
+      transformOrigin: "right top",
+    });
+
+    gsap.fromTo(
+      limbs,
+      {
+        rotate: 0,
+      },
+      {
+        duration: 2,
+        keyframes: {
+          "50%": { rotate: played ? 60 : -60 },
+          "100%": { rotate: 0 },
+          easeEach: "wiggle(3)",
+          overwrite: true,
+        },
+      }
+    );
+  };
+
+  button.addEventListener("click", () => {
+    played = !played;
+    animate();
   });
 });
 
@@ -310,8 +367,3 @@ Config object properties:
 
  Returns a Tween instance
 */
-
-const render = document.querySelector("#render");
-const img = document.createElement("img");
-img.src = "/frame-images/1.png";
-render.append(img);
