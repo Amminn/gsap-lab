@@ -353,6 +353,16 @@ addEventListener("DOMContentLoaded", () => {
     played = !played;
     animate();
   });
+
+  // eyes tracking animation
+
+  const xSetter = gsap.quickSetter(eyes, "x", "px");
+  const ySetter = gsap.quickSetter(eyes, "y", "px");
+
+  window.addEventListener("mousemove", (event) => {
+    xSetter(gsap.utils.mapRange(0, window.innerWidth, -1, 1, event.clientX));
+    ySetter(gsap.utils.mapRange(0, window.innerHeight, -1, 1, event.clientY));
+  });
 });
 
 //       end: `+=${frames.length * 500}px`,
